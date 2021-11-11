@@ -2,7 +2,6 @@ package org.bnp.id.controller;
 
 import lombok.Getter;
 import lombok.extern.log4j.Log4j;
-import org.bnp.id.model.Chapter;
 import org.bnp.id.model.Country;
 import org.bnp.id.repo.CountryRepository;
 import org.springframework.web.bind.annotation.GetMapping;

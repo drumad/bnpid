@@ -34,7 +34,7 @@ import java.util.List;
 public class Member {
 
     @Id
-    @Column(name = "member_id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "last_name")
@@ -49,8 +49,18 @@ public class Member {
     @Column(name = "short_name")
     private String shortName;
 
-    @Column(name = "member_address")
+    @Column(name = "address")
     private String address;
+
+    private String city;
+
+    private String state;
+
+    private int zip;
+
+    @ManyToOne
+    @JoinColumn(name = "country_id")
+    private Country country;
 
     @Column(name = "home_phone")
     private String homePhone;
@@ -63,8 +73,7 @@ public class Member {
     private String email;
 
     @Column(name = "education_level")
-    @Enumerated(EnumType.STRING)
-    private EducationLevel educationLevel;
+    private int educationLevel;
 
     private String degree;
 
@@ -114,7 +123,7 @@ public class Member {
     @UpdateTimestamp
     private Date dateUpdated;
 
-    @Column(name = "barcode_id", nullable = false)
+    @Column(name = "barcode_id", nullable = false, unique = true)
     private String barcodeId;
 
     @OneToOne

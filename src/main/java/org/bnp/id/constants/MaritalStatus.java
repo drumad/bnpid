@@ -6,9 +6,9 @@ import lombok.extern.log4j.Log4j;
 public enum MaritalStatus {
 
     NA,
-    Single,
-    Married,
-    Divorce,
-    Separated,
-    Widowed
+    SINGLE,
+    MARRIED,
+    DIVORCED,
+    SEPARATED,
+    WIDOWED
 }
