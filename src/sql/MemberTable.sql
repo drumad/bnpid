@@ -10,7 +10,7 @@ CREATE TABLE members
     `address`                   varchar(255)       DEFAULT NULL,
     `city`                      varchar(50)        DEFAULT NULL,
     `state`                     varchar(50)        DEFAULT NULL,
-    `zip`                       int                DEFAULT NULL,
+    `zip`                       varchar(10)        DEFAULT NULL,
     `country_id`                smallint           DEFAULT NULL,
     `home_phone`                varchar(50)        DEFAULT NULL,
     `work_phone`                varchar(50)        DEFAULT NULL,

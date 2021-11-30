@@ -3,9 +3,9 @@ package org.bnp.id.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.bnp.id.constants.EducationLevel;
 import org.bnp.id.constants.MaritalStatus;
 import org.bnp.id.constants.MemberStatus;
+import org.bnp.id.model.field.Education;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -49,14 +49,13 @@ public class Member {
     @Column(name = "short_name")
     private String shortName;
 
-    @Column(name = "address")
     private String address;
 
     private String city;
 
     private String state;
 
-    private int zip;
+    private String zip;
 
     @ManyToOne
     @JoinColumn(name = "country_id")
@@ -72,8 +71,9 @@ public class Member {
 
     private String email;
 
-    @Column(name = "education_level")
-    private int educationLevel;
+    @ManyToOne
+    @JoinColumn(name = "education_id")
+    private Education education;
 
     private String degree;
 
@@ -112,9 +112,6 @@ public class Member {
     @JoinColumn(name = "parish_id")
     private Parish parish;
 
-    @Column(name = "briefed_about_bnp")
-    private Boolean briefedAboutBnp;
-
     @Column(name = "date_created")
     @CreationTimestamp
     private Date dateCreated;
@@ -126,7 +123,7 @@ public class Member {
     @Column(name = "barcode_id", nullable = false, unique = true)
     private String barcodeId;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "chapter_id")
     private Chapter chapter;
 

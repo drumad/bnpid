@@ -271,25 +271,109 @@ update bnpid_old.CandidateInformationShared set homephone = '+44-785-215-2002' w
 update bnpid_old.CandidateInformationShared set citystatezip = null where id = 203;
 
 -- (5) Education Level
--- ANDREW TODO
+update bnpid_old.CandidateInformationShared set education = 'High school graduate' where education = 'HIGH SCHOOL' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'High school graduate' where education = 'High School Graduate' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'High school graduate' where education = '12TH GRADE' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'Bachelor''s degree' where education = 'COLLEGE LEVEL' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'Bachelor''s degree' where education = 'COLLEGE STUDENT' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'Bachelor''s degree' where education = 'College' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'Bachelor''s degree' where education = 'College - NURSING' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'Bachelor''s degree' where education = 'BA' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'Bachelor''s degree' where education = 'College Graduate' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'Bachelor''s degree' where education = 'Accounting' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'Some college' where education = 'Some College' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'Two years college' where education = '2 years' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'Master''s degree' where education = 'RETIRED PRIEST' and id > 0;
+update bnpid_old.CandidateInformationShared set education = 'Associate degree' where education = 'College Undergraduate' and id > 0;
+
+-- (6) Class Type
+-- select count(1), classtype from bnpid_old.CandidateInformationShared group by classtype order by classtype;
+-- select classnumber, classtype, classyear, classrector, classgroup, classplace from bnpid_old.CandidateInformationShared where classtype is null;
+-- select * from bnpid_old.CandidateInformationShared where bnpclassno is not null;
+
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where id = 5389;
+update bnpid_old.CandidateInformationShared set classnumber = 14 where id = 5389;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where id = 8427;
+update bnpid_old.CandidateInformationShared set classnumber = 176 where id = 8427;
+
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = ' PANAWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = ' SENIOR WOMEN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'JR GIRLS' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'JR PANAWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'JUNIOR GIRLS PANAWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'PAANWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'PANAWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'Panawagqn' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'PANAWGAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'PANAWGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'PANWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'PAPAWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'SENIOR' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'SENIOR MEN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'SENIOR WOMEN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'SR MEN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'SR WOMEN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Panawagan' where classtype = 'SR WOMENS PANAWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'OUTH MINISTRY' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'YM' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'YM CLASS' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'YM PANAWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'YM SPECIAL CLASS' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'YOUNG MEN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'YOUNG MEN PANAWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'YOUNG WOMEN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'YOUNT WOMEN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'YOUTH' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'YOUTH GIRLS' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry' where classtype = 'YOUTH MINISTRY' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Youth Ministry', classgroup = 'Youth Ministry' where classtype = 'YOUTH MINISTRY PANAWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Apostolic' where classtype = 'AMC' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Apostolic' where classtype = 'APOLSTOLIC MISSION' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Apostolic' where classtype = 'APOSTLIC MISSION' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Apostolic' where classtype = 'APOSTOLIC MISSION' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Apostolic' where classtype = 'APOSTOLIC MISSION CLASS' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Apostolic' where classtype = 'APOTOLIC MISSION CLASS' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Apostolic' where classtype = 'APOTOSLIC CLASS' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Little Lambs' where classtype = 'LITTLE LAMBS' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Marian' where classtype = 'MARIAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Mission' where classtype = 'MISSIO' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Mission' where classtype = 'MISSION' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Mission' where classtype = 'MISSION CLASS' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Munting Pagsasanay' where classtype = 'MUNTING PAGSASANAY' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Regular' where classtype = 'REGULAR' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Regular' where classtype = 'REGULAR CLASS' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Regular' where classtype = 'REGULAR RETREAT' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Regular' where classtype = 'Retreat' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Regular' where classtype = 'Retreat Class' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Regular' where classyear < 1983 and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Special' where classtype = 'SPECIAL CLASS' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Special' where classtype = 'SPECIAL PANAWAGAN' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Spiritual Workshop' where classtype = 'SPIRITUAL WORKSHOP' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Spiritual Workshop' where classtype = 'SPRITUAL WORKSHOP' and id > 0;
+update bnpid_old.CandidateInformationShared set classtype = 'Spiritual Workshop' where classtype = 'WORKSHOP' and id > 0;
+
+
+
+
+
 
 -- II. Transfer member information
 
-INSERT INTO bnpid.members 
+INSERT INTO bnpid.members
 	(
-		barcode_id, last_name, first_name, middle_name, address, city, state, zip, country_id, 
-		home_phone, work_phone, cellular, email, date_of_birth, marital_status, 
+		barcode_id, last_name, first_name, middle_name, address, city, state, zip, country_id,
+		home_phone, work_phone, cellular, email, date_of_birth, marital_status,
 		gender, religion, degree, illness, dietary_requirements,
 		dietary_requirements_desc, is_active
 	)
-	SELECT 
-		barcodeid, `last name`, `first name`, '', Address, City, State, zipcode, 226, 
+	SELECT
+		barcodeid, `last name`, `first name`, '', Address, City, State, zipcode, 226,
 		homephone, workphone, cellular, email, STR_TO_DATE(dateofbirth, '%m/%d/%Y'), maritalstatus,
 		sex, religion, degree, CONCAT_WS(' ', whatisyourillness, whatareyourphysicallimitations), specialdietaryrequirements,
-		specialdietaryrequirementdesc, true 
+		specialdietaryrequirementdesc, true
 	FROM bnpid_old.CandidateInformationShared
 	ORDER BY id;
-    
+
 -- (3) Update to determine country
 
 
@@ -298,14 +382,14 @@ INSERT INTO bnpid.members
 --------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO bnpid.parish
-	(	
+	(
 		`name`, address
 	)
-    SELECT 
+    SELECT
 		distinct parishchurch, CONCAT_WS(', ', parishaddress, citystatezip)
     FROM bnpid_old.CandidateInformationShared
     WHERE parishchurch IS NOT NULL;
-    
+
 WITH merged_parish (member_id, parish_id) AS
 	(SELECT m.id, p.id FROM bnpid.parish p JOIN bnpid_old.CandidateInformationShared cis ON p.name = cis.parishchurch INNER JOIN bnpid.members m ON cis.barcodeid = m.barcode_id)
 UPDATE bnpid.members m, merged_parish mp SET m.parish_id = mp.parish_id WHERE m.id = mp.member_id;
