@@ -13,12 +13,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -89,7 +91,7 @@ public class Member {
     private String dietaryRequirementsDesc;
 
     @Column(name = "date_of_birth")
-    private Date dateOfBirth;
+    private LocalDateTime dateOfBirth;
 
     @Column(name = "marital_status")
     @Enumerated(EnumType.STRING)
@@ -114,11 +116,11 @@ public class Member {
 
     @Column(name = "date_created")
     @CreationTimestamp
-    private Date dateCreated;
+    private LocalDateTime dateCreated;
 
     @Column(name = "date_updated")
     @UpdateTimestamp
-    private Date dateUpdated;
+    private LocalDateTime dateUpdated;
 
     @Column(name = "barcode_id", nullable = false, unique = true)
     private String barcodeId;
@@ -127,7 +129,9 @@ public class Member {
     @JoinColumn(name = "chapter_id")
     private Chapter chapter;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "members_class_info", joinColumns = @JoinColumn(name = "members_id"),
+               inverseJoinColumns = @JoinColumn(name = "class_info_id"))
     private List<ClassInfo> classes;
 
     @ManyToOne
@@ -135,17 +139,14 @@ public class Member {
     private Member sponsor;
 
     @Column(name = "date_adorer")
-    private Date dateAdorer;
+    private LocalDateTime dateAdorer;
 
     @Column(name = "date_hirang")
-    private Date dateHirang;
+    private LocalDateTime dateHirang;
 
     @Column(name = "date_council")
-    private Date dateCouncil;
+    private LocalDateTime dateCouncil;
 
-    @Override
-    public String toString() {
-
-        return "";
-    }
+    @Column(name = "is_active")
+    private boolean isActive;
 }

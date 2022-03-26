@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.bnp.id.constants.ClassGroup;
 import org.bnp.id.constants.ClassType;
 
 import javax.persistence.Column;
@@ -37,4 +38,10 @@ public class ClassInfo {
 
     @Column(name = "classno")
     private String classNo;
+
+    @Column(name = "classgroup")
+    private ClassGroup classGroup;
+
+    @Column(name = "notes")
+    private String notes;
 }

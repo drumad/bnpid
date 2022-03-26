@@ -1,7 +1,7 @@
 package org.bnp.id.controller;
 
 import lombok.Getter;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.bnp.id.model.Country;
 import org.bnp.id.repo.CountryRepository;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @RestController
-@Log4j
+@Log4j2
 @Getter
 public class CountryController {
 
@@ -52,6 +52,7 @@ public class CountryController {
     @GetMapping("/countries/list")
     public String list() {
 
-        return countries.values().stream().sorted(Comparator.comparingInt(Country::getId)).map(Country::getNiceName).collect(Collectors.joining("<br />"));
+        return countries.values().stream().sorted(Comparator.comparingInt(Country::getId)).map(Country::getNiceName)
+                        .collect(Collectors.joining("<br />"));
     }
 }

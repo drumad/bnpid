@@ -3,6 +3,9 @@ package org.bnp.id.model;
 import org.bnp.id.model.field.Name;
 
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /**
  * This is the class that will hold the chairperson's info. There shall only be one static _instance of this.
@@ -17,11 +20,11 @@ public class Chairperson extends org.bnp.id.model.Member {
         this.setFirstName("Salvacion");
         this.setMiddleName("Aguillon");
         this.setShortName("Ate Salve");
-        this.setDateOfBirth(Date.valueOf("March 14, 1947"));
+        this.setDateOfBirth(LocalDateTime.of(LocalDate.of(1949, 3, 14), LocalTime.MIN));
         this.setSex('F');
-        this.setDateAdorer(Date.valueOf("April 17, 1968"));
-        this.setDateHirang(Date.valueOf("April 17, 1968"));
-        this.setDateCouncil(Date.valueOf("April 17, 1968"));
+        this.setDateAdorer(LocalDateTime.of(LocalDate.of(1968, 4, 17), LocalTime.MIN));
+        this.setDateHirang(LocalDateTime.of(LocalDate.of(1968, 4, 17), LocalTime.MIN));
+        this.setDateCouncil(LocalDateTime.of(LocalDate.of(1968, 4, 17), LocalTime.MIN));
     }
 
     public static Chairperson getInstance() {

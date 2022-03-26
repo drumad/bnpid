@@ -1,5 +1,7 @@
 package org.bnp.id.util;
 
+import java.util.List;
+
 public class StringUtil {
 
     public static boolean isNullOrEmpty(String s) {

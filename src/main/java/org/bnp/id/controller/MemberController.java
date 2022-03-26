@@ -2,7 +2,7 @@ package org.bnp.id.controller;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.bnp.id.exception.MemberNotFoundException;
 import org.bnp.id.model.Chapter;
 import org.bnp.id.model.Country;
@@ -21,16 +21,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @Getter
 @Setter
 @RestController
-@Log4j
+@Log4j2
 @RequestMapping("/members")
 public class MemberController {
 
@@ -62,8 +61,6 @@ public class MemberController {
     public void loadMembers() {
 
         log.debug("Loading members..");
-        members = StreamSupport.stream(memberRepository.findAll().spliterator(), false)
-                               .collect((Collectors.toMap(Member::getBarcodeId, Function.identity())));
     }
 
     @GetMapping("/list/{barcodeId}")
@@ -73,9 +70,9 @@ public class MemberController {
     }
 
     @GetMapping("/list")
-    public String list() {
+    public Iterable<Member> list() {
 
-        return members.values().stream().map(Member::getLastName).collect(Collectors.joining("<br />"));
+        return memberRepository.findAll();
     }
 
     @PostMapping(value = "/add")
@@ -86,7 +83,7 @@ public class MemberController {
         member.setFirstName("Josephine");
         member.setMiddleName("Ecal");
         member.setShortName("Joy");
-        member.setDateOfBirth(Date.valueOf("1974-12-18"));
+        member.setDateOfBirth(LocalDateTime.of(LocalDate.of(1974, 12, 18), LocalTime.MIN));
         member.setChapter(chapterRepository.findChapterByName("Claremont Chapter").get());
 
         return memberRepository.save(member);
