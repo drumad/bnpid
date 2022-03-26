@@ -1,6 +1,6 @@
 package org.bnp.id.constants;
 
-public enum Assignment {
+public enum Role {
 
     DA,
     DP,
@@ -14,5 +14,6 @@ public enum Assignment {
     CHAPEL,
     VIGIL,
     DISHWASHING,
-    RUNNER
+    RUNNER,
+    CANDIDATE
 }
