@@ -19,14 +19,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests().
-            anyRequest().authenticated().
-                and().formLogin().permitAll().
-                and().logout().permitAll();
+        http.httpBasic().and().authorizeRequests().anyRequest().fullyAuthenticated().and().formLogin().permitAll().and().logout().permitAll();
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    protected void configure(AuthenticationManagerBuilder auth) {
 
         auth.authenticationProvider(authenticationProvider());
     }
