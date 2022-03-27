@@ -7,7 +7,7 @@ public class MemberNotFoundException extends RuntimeException {
         super("No members found!");
     }
 
-    public MemberNotFoundException(Integer id) {
+    public MemberNotFoundException(Long id) {
 
         super(String.format("Member with id [%d] was not found.", id));
     }

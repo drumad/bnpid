@@ -290,24 +290,37 @@ update bnpid_old.CandidateInformationShared set education = 'Associate degree' w
 -- II. Transfer member information
 
 INSERT INTO bnpid.members
-	(
-		barcode_id, last_name, first_name, middle_name, address, city, state, zip, country_id,
-		home_phone, work_phone, cellular, email, date_of_birth, marital_status,
-		gender, religion, degree, illness, dietary_requirements,
-		dietary_requirements_desc, is_active
-	)
-	SELECT
-		barcodeid, `last name`, `first name`, '', Address, City, State, zipcode, 226,
-		homephone, workphone, cellular, email, STR_TO_DATE(dateofbirth, '%m/%d/%Y'), maritalstatus,
-		sex, religion, degree, CONCAT_WS(' ', whatisyourillness, whatareyourphysicallimitations), specialdietaryrequirements,
-		specialdietaryrequirementdesc, true
-	FROM bnpid_old.CandidateInformationShared
-	ORDER BY id;
+(barcode_id, last_name, first_name, middle_name, address, city, state, zip, country_id,
+ home_phone, work_phone, cellular, email, date_of_birth, marital_status,
+ gender, religion, degree, illness, dietary_requirements,
+ dietary_requirements_desc, is_active, notes)
+SELECT barcodeid,
+       `last name`,
+       `first name`,
+       '',
+       Address,
+       City,
+       State,
+       zipcode,
+       226,
+       homephone,
+       workphone,
+       cellular,
+       email,
+       STR_TO_DATE(dateofbirth, '%m/%d/%Y'),
+       maritalstatus,
+       sex,
+       religion,
+       degree,
+       CONCAT_WS(' ', whatisyourillness, whatareyourphysicallimitations),
+       specialdietaryrequirements,
+       specialdietaryrequirementdesc,
+       true,
+       CONCAT_WS('|', classnumber, classyear, classgroup, classtype, classrector, chapter, sponsorsname, bnpclassno, desktoppath)
+FROM bnpid_old.CandidateInformationShared
+ORDER BY id;
 
 -- (3) Update bnpid to determine country
-select distinct address, city, state, zip from bnpid.members order by state;
-select * from bnpid.country;
-
 update bnpid.members set address = '1 BRADCO AVE', city = 'Ooralea Mackay', state = 'Queensland', country_id = 13, zip = '4740' where address like '%1 BRADCO AVE%' and id > 0;
 update bnpid.members set address = '102 Field St', city = 'West Mackay', state = 'Queensland', country_id = 13, zip = '4740' where address like '%102 FIELD STREET%' and id > 0;
 
@@ -360,4 +373,3 @@ INSERT INTO bnpid.parish
 WITH merged_parish (member_id, parish_id) AS
 	(SELECT m.id, p.id FROM bnpid.parish p JOIN bnpid_old.CandidateInformationShared cis ON p.name = cis.parishchurch INNER JOIN bnpid.members m ON cis.barcodeid = m.barcode_id)
 UPDATE bnpid.members m, merged_parish mp SET m.parish_id = mp.parish_id WHERE m.id = mp.member_id;
-

@@ -37,6 +37,7 @@ CREATE TABLE members
     `sponsor_id`                bigint             DEFAULT NULL,
     `chapter_id`                int                DEFAULT NULL,
     `parish_id`                 int                DEFAULT NULL,
+    `notes`                     text               DEFAULT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (contact_id) REFERENCES members (id),
     FOREIGN KEY (sponsor_id) REFERENCES members (id),
