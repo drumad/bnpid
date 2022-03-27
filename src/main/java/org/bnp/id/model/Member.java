@@ -112,11 +112,11 @@ public class Member {
 
     private String religion;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "contact_id")
     private Member contact;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "parish_id")
     private Parish parish;
 

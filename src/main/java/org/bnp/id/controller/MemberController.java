@@ -7,8 +7,6 @@ import org.bnp.id.exception.MemberNotFoundException;
 import org.bnp.id.model.Chapter;
 import org.bnp.id.model.Country;
 import org.bnp.id.model.Member;
-import org.bnp.id.repo.ChapterRepository;
-import org.bnp.id.repo.CountryRepository;
 import org.bnp.id.repo.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,16 +37,10 @@ public class MemberController {
 
     private MemberRepository memberRepository;
 
-    private CountryRepository countryRepository;
-
-    private ChapterRepository chapterRepository;
-
     @Autowired
-    public MemberController(MemberRepository memberRepository, CountryRepository countryRepository, ChapterRepository chapterRepository) {
+    public MemberController(MemberRepository memberRepository) {
 
         this.memberRepository = memberRepository;
-        this.countryRepository = countryRepository;
-        this.chapterRepository = chapterRepository;
     }
 
     @GetMapping("/list/{barcodeId}")
