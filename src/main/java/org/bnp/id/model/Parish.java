@@ -19,14 +19,14 @@ import java.util.Date;
 public class Parish {
 
     @Id
-    @Column(name = "parish_id")
+    @Column(name = "id")
     @GeneratedValue
     private Long id;
 
-    @Column(name = "parish_name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "parish_address")
+    @Column(name = "address")
     private String address;
 
     @Column(name = "date_updated")

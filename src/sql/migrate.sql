@@ -371,5 +371,5 @@ INSERT INTO bnpid.parish
     WHERE parishchurch IS NOT NULL;
 
 WITH merged_parish (member_id, parish_id) AS
-	(SELECT m.id, p.id FROM bnpid.parish p JOIN bnpid_old.CandidateInformationShared cis ON p.name = cis.parishchurch INNER JOIN bnpid.members m ON cis.barcodeid = m.barcode_id)
+	(SELECT m.id, p.id FROM bnpid.parish p JOIN bnpid_old.CandidateInformationShared cis ON p.name = cis.parishchurch JOIN bnpid.members m ON cis.barcodeid = m.barcode_id)
 UPDATE bnpid.members m, merged_parish mp SET m.parish_id = mp.parish_id WHERE m.id = mp.member_id;

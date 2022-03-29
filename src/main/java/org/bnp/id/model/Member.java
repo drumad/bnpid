@@ -18,6 +18,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -41,6 +42,7 @@ public class Member {
 
     @Id
     @Column(name = "id")
+    @GeneratedValue
     private Long id;
 
     @Column(name = "last_name")
@@ -112,11 +114,11 @@ public class Member {
 
     private String religion;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "contact_id")
     private Member contact;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "parish_id")
     private Parish parish;
 
