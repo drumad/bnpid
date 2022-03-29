@@ -1,23 +1,33 @@
 package org.bnp.id.controller;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
 import org.bnp.id.model.User;
-import org.bnp.id.model.details.BnpUserDetails;
 import org.bnp.id.repo.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.function.EntityResponse;
 
-public class UserController implements UserDetailsService {
+@Getter
+@Setter
+@RestController
+@Log4j2
+@RequestMapping("/users")
+public class UserController {
 
-    @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
-    @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+    @PostMapping("/add")
+    public EntityResponse<User> add(@RequestBody User user) {
 
-        User user = userRepository.findUserByUsername(s).orElseThrow(() -> new UsernameNotFoundException(s + " not found."));
+        // Not sure if we want to add users through an interface.
 
-        return new BnpUserDetails(user);
+        //user.setEnabled(true);
+        //return EntityResponse.fromObject((userRepository.save(user).get())).build();
+
+        return null;
     }
 }

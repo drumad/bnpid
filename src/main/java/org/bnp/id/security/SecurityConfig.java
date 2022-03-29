@@ -1,6 +1,6 @@
 package org.bnp.id.security;
 
-import org.bnp.id.controller.UserController;
+import org.bnp.id.service.impl.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public UserDetailsService userDetailsService() {
 
-        return new UserController();
+        return new UserDetailsServiceImpl();
     }
 
     @Bean

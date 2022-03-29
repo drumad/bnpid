@@ -1,4 +1,4 @@
-package org.bnp.id.model.details;
+package org.bnp.id.service;
 
 import lombok.AllArgsConstructor;
 import org.bnp.id.model.User;
