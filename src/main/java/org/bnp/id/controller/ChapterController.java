@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("/chapters")
 public class ChapterController {
 
-    private ChapterRepository chapterRepository;
+    private final ChapterRepository chapterRepository;
 
     @Autowired
     public ChapterController(ChapterRepository chapterRepository) {
