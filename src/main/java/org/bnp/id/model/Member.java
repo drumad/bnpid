@@ -24,7 +24,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -110,7 +109,7 @@ public class Member {
     private MemberStatus memberStatus;
 
     @Column(name = "gender")
-    private Character sex;
+    private Character gender;
 
     private String religion;
 

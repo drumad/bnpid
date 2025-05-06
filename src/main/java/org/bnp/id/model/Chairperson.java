@@ -1,8 +1,5 @@
 package org.bnp.id.model;
 
-import org.bnp.id.model.field.Name;
-
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -21,7 +18,7 @@ public class Chairperson extends org.bnp.id.model.Member {
         this.setMiddleName("Aguillon");
         this.setShortName("Ate Salve");
         this.setDateOfBirth(LocalDateTime.of(LocalDate.of(1949, 3, 14), LocalTime.MIN));
-        this.setSex('F');
+        this.setGender('F');
         this.setDateAdorer(LocalDateTime.of(LocalDate.of(1968, 4, 17), LocalTime.MIN));
         this.setDateHirang(LocalDateTime.of(LocalDate.of(1968, 4, 17), LocalTime.MIN));
         this.setDateCouncil(LocalDateTime.of(LocalDate.of(1968, 4, 17), LocalTime.MIN));

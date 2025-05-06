@@ -93,7 +93,7 @@ public class MemberController {
         member.setParish(updatedMember.getParish());
         member.setPhysicalLimitations(updatedMember.getPhysicalLimitations());
         member.setReligion(updatedMember.getReligion());
-        member.setSex(updatedMember.getSex());
+        member.setGender(updatedMember.getGender());
         member.setShortName(updatedMember.getShortName());
         member.setSponsor(updatedMember.getSponsor());
         member.setState(updatedMember.getState());
