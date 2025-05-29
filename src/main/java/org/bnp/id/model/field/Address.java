@@ -32,15 +32,13 @@ public class Address {
             return true;
         }
 
-        if (o != null && o instanceof Address) {
+        if (o instanceof Address) {
             Address addr = (Address) o;
 
             if (this.street != null && addr.getStreet() != null) {
                 isEqual = this.street.equals(addr.getStreet());
             } else if (StringUtils.isNullOrEmpty(this.street) && StringUtils.isNullOrEmpty(addr.getStreet())) {
                 isEqual = true;
-            } else {
-                isEqual = false;
             }
 
             if (isEqual && this.city != null && addr.getCity() != null) {

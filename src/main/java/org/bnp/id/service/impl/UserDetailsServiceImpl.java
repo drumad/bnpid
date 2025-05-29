@@ -1,19 +1,21 @@
 package org.bnp.id.service.impl;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.bnp.id.model.User;
 import org.bnp.id.repo.UserRepository;
 import org.bnp.id.service.BnpUserDetails;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 @Log4j2
+@AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {

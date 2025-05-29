@@ -114,7 +114,7 @@ update bnpid_old.CandidateInformationShared set parishchurch = 'Guardian Angel C
 
 update bnpid_old.CandidateInformationShared set parishaddress = '250 N. Turner Avenue' where parishchurch = 'GUASTI' and id > 0;
 update bnpid_old.CandidateInformationShared set citystatezip = 'Ontario, CA 91761' where parishchurch = 'GUASTI' and id > 0;
-update bnpid_old.CandidateInformationShared set parishchurch = 'San Secondo d\'Asti Catholic Church' where parishchurch = 'GUASTI' and id > 0;
+update bnpid_old.CandidateInformationShared set parishchurch = 'San Secondo d''Asti Catholic Church' where parishchurch = 'GUASTI' and id > 0;
 
 update bnpid_old.CandidateInformationShared set parishaddress = '740 Shamrock Ave' where parishchurch = 'IMMACULATE CONCEPCION' and id > 0;
 update bnpid_old.CandidateInformationShared set citystatezip = 'Monrovia, CA 91016' where parishchurch = 'IMMACULATE CONCEPCION' and id > 0;
@@ -142,7 +142,7 @@ update bnpid_old.CandidateInformationShared set parishchurch = 'Our Lady of Peac
 
 update bnpid_old.CandidateInformationShared set parishaddress = '26 Swanston St' where parishchurch = 'Our Lady of the Rosary' and id > 0;
 update bnpid_old.CandidateInformationShared set citystatezip = 'St Marys NSW 2760' where parishchurch = 'Our Lady of the Rosary' and id > 0;
-update bnpid_old.CandidateInformationShared set parishchurch = 'Our Lady of the Rosary Church, St. Mary\'s' where parishchurch = 'Our Lady of the Rosary' and id > 0;
+update bnpid_old.CandidateInformationShared set parishchurch = 'Our Lady of the Rosary Church, St. Mary''s' where parishchurch = 'Our Lady of the Rosary' and id > 0;
 
 update bnpid_old.CandidateInformationShared set parishaddress = '4824 Jones Ave' where parishchurch = 'REYNA DELOS ANGELES' and id > 0;
 update bnpid_old.CandidateInformationShared set citystatezip = 'Riverside, CA 92505' where parishchurch = 'REYNA DELOS ANGELES' and id > 0;
@@ -210,15 +210,15 @@ update bnpid_old.CandidateInformationShared set parishchurch = 'St. John Baptist
 
 update bnpid_old.CandidateInformationShared set parishaddress = '877 N Campus Ave' where parishchurch = 'ST JOSEPH - UPLAND' and id > 0;
 update bnpid_old.CandidateInformationShared set citystatezip = 'Upland, CA 91786' where parishchurch = 'ST JOSEPH - UPLAND' and id > 0;
-update bnpid_old.CandidateInformationShared set parishchurch = 'St. Joseph\'s Catholic Church' where parishchurch = 'ST JOSEPH - UPLAND' and id > 0;
+update bnpid_old.CandidateInformationShared set parishchurch = 'St. Joseph''s Catholic Church' where parishchurch = 'ST JOSEPH - UPLAND' and id > 0;
 
 update bnpid_old.CandidateInformationShared set parishaddress = '1032 Thomas Way' where parishchurch = 'ST MARY' and id > 0;
 update bnpid_old.CandidateInformationShared set citystatezip = 'Delano, CA 93215' where parishchurch = 'ST MARY' and id > 0;
-update bnpid_old.CandidateInformationShared set parishchurch = 'St. Mary\'s Church and School' where parishchurch = 'ST MARY' and id > 0;
+update bnpid_old.CandidateInformationShared set parishchurch = 'St. Mary''s Church and School' where parishchurch = 'ST MARY' and id > 0;
 
-update bnpid_old.CandidateInformationShared set parishaddress = '16550 Jurupa Ave' where parishchurch = 'ST MARY\'S' and id > 0;
-update bnpid_old.CandidateInformationShared set citystatezip = 'Fontana, CA 92337' where parishchurch = 'ST MARY\'S' and id > 0;
-update bnpid_old.CandidateInformationShared set parishchurch = 'St. Mary\'s Catholic Church' where parishchurch = 'ST MARY\'S' and id > 0;
+update bnpid_old.CandidateInformationShared set parishaddress = '16550 Jurupa Ave' where parishchurch = 'ST MARY''S' and id > 0;
+update bnpid_old.CandidateInformationShared set citystatezip = 'Fontana, CA 92337' where parishchurch = 'ST MARY''S' and id > 0;
+update bnpid_old.CandidateInformationShared set parishchurch = 'St. Mary''s Catholic Church' where parishchurch = 'ST MARY''S' and id > 0;
 
 update bnpid_old.CandidateInformationShared set parishaddress = '14085 Peyton Dr' where parishchurch IN ('ST PAUL', 'ST PAUL THE APOSTLE') and id > 0;
 update bnpid_old.CandidateInformationShared set citystatezip = 'Chino Hills, CA 91709' where parishchurch IN ('ST PAUL', 'ST PAUL THE APOSTLE') and id > 0;
@@ -232,13 +232,13 @@ update bnpid_old.CandidateInformationShared set parishaddress = '130 N Pecos Rd'
 update bnpid_old.CandidateInformationShared set citystatezip = 'Henderson, NV 89074' where parishchurch = 'ST THOMAS MOORE' and id > 0;
 update bnpid_old.CandidateInformationShared set parishchurch = 'St. Thomas More Catholic Community' where parishchurch = 'ST THOMAS MOORE' and id > 0;
 
-update bnpid_old.CandidateInformationShared set parishaddress = '3108 Sierra Rd' where parishchurch = 'ST VICTOR\'S PARICH' and id > 0;
-update bnpid_old.CandidateInformationShared set citystatezip = 'San Jose, CA 95132' where parishchurch = 'ST VICTOR\'S PARICH' and id > 0;
-update bnpid_old.CandidateInformationShared set parishchurch = 'St. Victor Catholic Church' where parishchurch = 'ST VICTOR\'S PARICH' and id > 0;
+update bnpid_old.CandidateInformationShared set parishaddress = '3108 Sierra Rd' where parishchurch = 'ST VICTOR''S PARICH' and id > 0;
+update bnpid_old.CandidateInformationShared set citystatezip = 'San Jose, CA 95132' where parishchurch = 'ST VICTOR''S PARICH' and id > 0;
+update bnpid_old.CandidateInformationShared set parishchurch = 'St. Victor Catholic Church' where parishchurch = 'ST VICTOR''S PARICH' and id > 0;
 
 update bnpid_old.CandidateInformationShared set parishaddress = '555 San Bruno Ave W' where parishchurch = 'SAN BRUNO CHURCH' and id > 0;
 update bnpid_old.CandidateInformationShared set citystatezip = 'San Bruno, CA 94066' where parishchurch = 'SAN BRUNO CHURCH' and id > 0;
-update bnpid_old.CandidateInformationShared set parishchurch = 'St. Bruno\'s Catholic Church' where parishchurch = 'SAN BRUNO CHURCH' and id > 0;
+update bnpid_old.CandidateInformationShared set parishchurch = 'St. Bruno''s Catholic Church' where parishchurch = 'SAN BRUNO CHURCH' and id > 0;
 
 update bnpid_old.CandidateInformationShared set parishaddress = '999 E Kingsley Ave' where parishchurch = 'St. Madeleine' and id > 0;
 update bnpid_old.CandidateInformationShared set citystatezip = 'Pomona, CA 91767' where parishchurch = 'St. Madeleine' and id > 0;
@@ -309,7 +309,7 @@ SELECT barcodeid,
        email,
        STR_TO_DATE(dateofbirth, '%m/%d/%Y'),
        maritalstatus,
-       sex,
+       gender,
        religion,
        degree,
        CONCAT_WS(' ', whatisyourillness, whatareyourphysicallimitations),

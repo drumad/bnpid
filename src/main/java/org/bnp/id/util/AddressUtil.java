@@ -66,17 +66,17 @@ public class AddressUtil {
 
         StringBuilder result = new StringBuilder();
 
-        if (!StringUtil.isNullOrEmpty(address.getStreet())) {
+        if (!StringUtils.isNullOrEmpty(address.getStreet())) {
             result.append(address.getStreet());
         }
         result.append(StringConstants.COMMA_SPACE);
 
-        if (!StringUtil.isNullOrEmpty(address.getCity())) {
+        if (!StringUtils.isNullOrEmpty(address.getCity())) {
             result.append(address.getCity());
         }
         result.append(StringConstants.COMMA_SPACE);
 
-        if (!StringUtil.isNullOrEmpty(address.getState())) {
+        if (!StringUtils.isNullOrEmpty(address.getState())) {
             result.append(address.getState());
         }
 
